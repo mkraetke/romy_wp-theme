@@ -75,15 +75,17 @@ nav.navbar { padding: 1.5em 0}
 body.category-works main.site-main { display:grid; 
   grid-template-columns: 12% 12% 12% 12% 12%; 
   column-gap:10%; }
+footer.posts-navigation  { display:grid; grid-template-columns: 12%  12%; 
+  column-gap:76%; padding-bottom:2em }
 
 
-/* 
- * single post works
- */
+div.next-posts a, div.previous-posts a { display:inline-block; width:100%; height:100%  }
+div.next-posts { background-image: url('img/next.svg'); background-position: top right; }
+div.previous-posts { background-image: url('img/prev.svg'); background-position: top left; }
+div.next-posts, div.previous-posts { background-repeat: no-repeat; background-size: contain; width:auto; height:24vh; }
+div.next-posts:hover { background-image: url('img/next-hover.svg'); }
+div.previous-posts:hover { background-image: url('img/prev-hover.svg'); }
 
-main.site-works { display:grid; grid-template-columns: 20% 60% 20%; column-gap:0; }
-article.category-works { width:auto; height:100%; padding-bottom:1em;  }
-article.category-works img { max-height: 60vh; width:auto; margin:auto; }
 
 /*
  * category exhibitions page
@@ -99,13 +101,32 @@ body.category-exhibitions article { display:grid;
 .exhibition-location, .exhibition-header { border-top: 2px solid #76fe96; }
 .exhibition-year.year-delim { border-top: 5px solid #76fe96 };
 .exhibition-year.no-year-delim { border-top-style:none }
+body.category-exhibitions .exhibition-content { display:none }
 
+/* single post navigation arrows */
 
-/*
+div.next-post { background-image: url('img/rewind.svg'); background-position: top left; }
+div.previous-post { background-image: url('img/forward.svg'); background-position: top right; }
+div.next-post, div.previous-post { background-repeat: no-repeat; background-size: contain; width:auto; height:80vh; }
+div.next-post:hover { background-image: url('img/rewind-hover.svg'); }
+div.previous-post:hover { background-image: url('img/forward-hover.svg'); }
+div.next-post a, div.previous-post a { display:inline-block; width:100%; height:100% } 
+
+/* 
  * single post works
  */
 
+#main.works { display:grid; grid-template-columns: 20% 60% 20%; column-gap:0; }
+article.category-works { width:auto; height:100%; padding-bottom:1em;  }
+article.category-works img { max-height: 60vh; width:auto; margin:auto; }
 
+/*
+ * single post default, e.g. exhibitions
+ */
+
+#main.exhibitions { display:grid; grid-template-columns: 20% 60% 20%; column-gap:0; }
+article.category-exhibitions { width:auto; height:100%; padding-bottom:1em;  }
+article.category-exhibitions img { max-height: 60vh; width:auto; margin:auto; }
 
 
 /*
@@ -140,22 +161,9 @@ div.entry-content p img {display:block}
 
 div.entry-header a { color:#000; }
 
-
 /* image gallery */
 
-div.next-post { background-image: url('img/rewind.svg'); background-position: top left; }
-div.previous-post { background-image: url('img/forward.svg'); background-position: top right; }
-div.next-post, div.previous-post { background-repeat: no-repeat; background-size: contain;}
-div.next-post:hover { background-image: url('img/rewind-hover.svg'); }
-div.previous-post:hover { background-image: url('img/forward-hover.svg'); }
-
-div.next-post, div.previous-post { width:auto; height:80vh ; }
-
-div.next-post a, div.previous-post a { display:inline-block; width:100%; height:100% } 
-.single-post div.post-thumbnail { text-align:right }
-.single-post img.attachment-post-thumbnail { max-height:80vh; }
-/*article.category-works footer.entry-footer { display:none }
-article.category-works header.entry-header { display:none }*/
-
-.single-post article {height:100%; padding:0; display:grid; grid-template-columns: 55% 40%; column-gap:5%;}
-.single-post .entry-title { font-size:4em; color:#76fe96 }
+.single-post #main.works div.post-thumbnail { text-align:right }
+.single-post #main.works img.attachment-post-thumbnail { max-height:80vh; }
+.single-post #main.works article {height:100%; padding:0; display:grid; grid-template-columns: 55% 40%; column-gap:5%;}
+.single-post #main.works .entry-title { font-size:4em; color:#76fe96 }

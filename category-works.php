@@ -16,6 +16,7 @@ get_header();
 ?>
 
 	<div id="primary" class="content-area">
+	
 		<main id="main" class="site-main">
 		<?php
 		if ( have_posts() ) :
@@ -41,9 +42,7 @@ get_header();
 				get_template_part( 'template-parts/content', 'works' );
 
 			endwhile;
-
-			the_posts_navigation();
-
+			
 		else :
 
 			get_template_part( 'template-parts/content', 'none' );
@@ -52,8 +51,23 @@ get_header();
 		?>
 
 		</main><!-- #main -->
+		
+		<footer class="posts-navigation">
+			<div class="previous-posts">
+			
+				<?php
+					previous_posts_link('');
+				?>
+			</div>
+			<div class="next-posts">
+			
+				<?php
+					next_posts_link('');
+				?>
+			</div>
+		</footer>
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
-get_footer();
+//get_sidebar();
+//get_footer();

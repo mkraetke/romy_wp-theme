@@ -15,22 +15,25 @@
 		$current_year = get_post_meta($post->ID, 'year', true);
 		$delim_class = (!$next_post || !($next_year == $current_year)) ? 'year-delim' :'no-year-delim';
 	?>
+	<div class="header">
+		<?php
+		if ( is_singular() ) :
+			the_title( '<span class="entry-title">', '</span>' );
+		else :
+			the_title( '<span class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></span>' );
+		endif;
 
-	<div class="exhibition-year <?php echo $delim_class;?>">
-		<p><?php 
-			if( !$next_post || !($next_year == $current_year) ) {
-				
-				echo $current_year;
-			};
-			//echo $current_year . " / "  . ( boolval( $next_post ) ? 'true' : 'false' ) . " / " . $next_post->post_title;
-			?>
-			</p>
-	</div>
-	<div class="exhibition-location">
-		<p><?php echo get_post_meta($post->ID, 'location', true); ?></p>
-	</div>
+		if ( 'post' === get_post_type() ) :
+	  endif; 	  
+	  // commented, shows category and upload date
+	  //romy2_entry_footer();
+	  //romy2_posted_on();
+	  ?>
+	</div><!-- .entry-header -->
 
-	<div class="exhibition-content">
+	
+	
+	<div class="content">
 		<?php
 		//romy2_post_thumbnail();
 		
@@ -54,19 +57,5 @@
 		
 		?>
 	</div>
-	<div class="exhibition-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<span class="entry-title">', '</span>' );
-		else :
-			the_title( '<span class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></span>' );
-		endif;
-
-		if ( 'post' === get_post_type() ) :
-	  endif; 	  
-	  // commented, shows category and upload date
-	  //romy2_entry_footer();
-	  //romy2_posted_on();
-	  ?>
-	</div><!-- .entry-header -->
+	
 </article><!-- #post-<?php the_ID(); ?> -->
