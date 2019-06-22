@@ -7,6 +7,8 @@
  * @package romy2
  */
 
+$cat_array = get_the_category();
+$cat_name = $cat_array[0]->cat_name;
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -30,7 +32,7 @@
 				?>
 				<div class="entry-meta">
 					<?php
-					if( get_the_category()[0]->name == 'works' ) {
+					if( $cat_name == 'works' ) {
 					?>	
 						 <ul class="post-meta">
 						   <li><?php echo get_post_meta($post->ID, 'dimensions', true); ?></li>
