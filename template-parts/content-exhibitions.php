@@ -10,9 +10,9 @@
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(''); ?>>
 	<?php
-		$next_post = get_next_post( true );
-		$next_year = get_post_meta( $next_post->ID, 'year', $single = true);
 		$current_year = get_post_meta($post->ID, 'year', true);
+		$next_post = get_next_post( true );
+		$next_year = !empty( $next_post ) ? get_post_meta( $next_post->ID, 'year', $single = true ) : $current_year;
 		$delim_class = (!$next_post || !($next_year == $current_year)) ? 'year-delim' :'no-year-delim';
 	?>
 
