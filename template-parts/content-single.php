@@ -9,12 +9,7 @@
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(''); ?>>
-	<?php
-		$next_post = get_next_post( true );
-		$next_year = get_post_meta( $next_post->ID, 'year', $single = true);
-		$current_year = get_post_meta($post->ID, 'year', true);
-		$delim_class = (!$next_post || !($next_year == $current_year)) ? 'year-delim' :'no-year-delim';
-	?>
+	
 	<div class="header">
 		<?php
 		if ( is_singular() ) :
@@ -35,7 +30,7 @@
 	
 	<div class="content">
 		<?php
-		//romy2_post_thumbnail();
+		romy2_post_thumbnail();
 		
 		the_content( sprintf(
 			wp_kses(
