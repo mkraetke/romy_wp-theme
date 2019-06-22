@@ -22,6 +22,11 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11"/>
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/lib/bootstrap/css/bootstrap.min.css"/>
 	<?php wp_head(); ?>
+	<style>
+		.bg {
+			background-image: url("<?php bloginfo('template_url'); ?>/img/bg<?php echo rand(1,5);?>.jpg");
+			}
+	</style>
 </head>
 <body <?php body_class(); ?>>
 	<div class="bg <?php if (! is_home()){ echo 'bgnone';} ?>">

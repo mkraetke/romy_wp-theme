@@ -38,9 +38,6 @@ body, html{
  */
 
 .bg {
-  /* The image used */
-  background-image: url("img/bg.jpg");
-
   /* Full height */
   height: 100%; 
 
@@ -190,7 +187,7 @@ button.navbar-toggler { border:0 }
 
 @media (max-width: 992px) {
 	.nav-item {  border-bottom:1px solid #76fe96; }
-	.bg.bgnone .navbar-light .navbar-nav a.nav-link, .navblack .navbar-nav a.nav-link { color:#76fe96; font-size:0.8em; font-weight:bold; background-color:mintcream }
+	.bg.bgnone .navbar-light .navbar-nav a.nav-link, .navblack .navbar-nav a.nav-link { color:#76fe96; font-weight:bold; background-color:mintcream }
 	.bg .navbar-light .navbar-nav a.nav-link, .navblack .navbar-nav a.nav-link { background-color:inherit }
 	.divider { display:none }
 	nav.navbar { padding:1.5em 0 }
