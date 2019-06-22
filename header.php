@@ -14,7 +14,11 @@
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>"/>
+	<meta name="theme-color" content="#76fe96"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="icon" sizes="192x192" href="<?php bloginfo('template_url'); ?>/img/icons/icon.png"/>
+	<link rel="apple-touch-icon" href="<?php bloginfo('template_url'); ?>/img/icons/ios-icon.png"/>
 	<link rel="profile" href="https://gmpg.org/xfn/11"/>
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/lib/bootstrap/css/bootstrap.min.css"/>
 	<?php wp_head(); ?>
