@@ -8,7 +8,8 @@
  */
 
 get_header();
-$cat_name = get_the_category()[0]->cat_name;
+$cat_array = get_the_category();
+$cat_name = $cat_array[0]->cat_name;
 ?>
 
 	<div id="primary" class="content-area">
@@ -17,13 +18,12 @@ $cat_name = get_the_category()[0]->cat_name;
 		<?php
 		while ( have_posts() ) :
 			if( $cat_name == 'works') {
-
+				
 				?>
 					<div class="next-post"><?php next_post_link('%link', false, true); ?></div>
-				<?php
+				<?php 
 						the_post();
 						get_template_part( 'template-parts/content', get_post_type() );
-						//the_post_navigation();
 				?>
 					<div class="previous-post"><?php previous_post_link('%link', false, true); ?> </div>
 				<?php
